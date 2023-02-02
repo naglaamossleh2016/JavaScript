@@ -1,4 +1,7 @@
-let currentResult = 0;
-currentResult = currentResult + 10;
+const defaultValue = 0;
+let currentResult = defaultValue;
+currentResult = currentResult + (10 * 3) / 2 - 1;
 
-outputResult(currentResult, "");
+let resultDescription = "(" + defaultValue + " + 10 * 3 ) / 2-1";
+
+outputResult(currentResult, resultDescription);
