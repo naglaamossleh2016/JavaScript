@@ -13,5 +13,5 @@ task3Element.addEventListener('click',Hello);
 function fullName(firstName,middleName,lastName){
     return firstName+' '+middleName+' '+lastName;
 }
-let completeName=fullName('Naglaa','Abu Bakr',"Mossleh");
+let completeName=fullName('Naglaa','Abu Bakr','Mossleh');
 alert(completeName);
