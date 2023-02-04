@@ -13,25 +13,25 @@ function displayValue(numberBerforeCal, operator, resultAfterCal) {
 function add() {
   const UserNum = getUserNumberInput();
   const intialValue = currentResult;
-  currentResult = currentResult + UserNum;
+  currentResult += UserNum;
   displayValue(intialValue, "+", UserNum);
 }
 function subtract() {
   const UserNum = getUserNumberInput();
   const intialValue = currentResult;
-  currentResult = currentResult - UserNum;
+  currentResult -= UserNum;
   displayValue(intialValue, "-", UserNum);
 }
 function multiply() {
   const UserNum = getUserNumberInput();
   const intialValue = currentResult;
-  currentResult = currentResult * UserNum;
+  currentResult *= UserNum;
   displayValue(intialValue, "*", UserNum);
 }
 function devision() {
   const UserNum = getUserNumberInput();
   const intialValue = currentResult;
-  currentResult = currentResult / UserNum;
+  currentResult /= UserNum;
   displayValue(intialValue, "/", UserNum);
 }
 addBtn.addEventListener("click", add);
