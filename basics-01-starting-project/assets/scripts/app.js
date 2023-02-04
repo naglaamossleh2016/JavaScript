@@ -16,8 +16,13 @@ function add() {
   const intialValue = currentResult;
   currentResult += UserNum;
   displayValue(intialValue, "+", UserNum);
-  logEnteries.push(UserNum);
-  console.log(logEnteries);
+  const logObject = {
+    operation: "ADD",
+    initialVal: intialValue,
+    inputUser: UserNum,
+    sum: currentResult,
+  };
+  console.log(logObject);
 }
 function subtract() {
   const UserNum = getUserNumberInput();
