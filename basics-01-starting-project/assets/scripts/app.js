@@ -21,33 +21,37 @@ function showLog(operation, intialValue, UserNum, summtion) {
   logEnteries.push(logObject);
   console.log(logEnteries);
 }
-function add() {
+function calculation(operator) {
   const UserNum = getUserNumberInput();
   const intialValue = currentResult;
-  currentResult += UserNum;
-  displayValue(intialValue, "+", UserNum);
-  showLog("+", intialValue, UserNum, currentResult);
+
+  if (operator === "ADD") {
+    currentResult += UserNum;
+    operatorMath = "+";
+  } else if (operator === "SUBTRACT") {
+    currentResult -= UserNum;
+    operatorMath = "-";
+  } else if (operator === "MULTIPLY") {
+    currentResult *= UserNum;
+    operatorMath = "*";
+  } else if (operator === "DIVIDE") {
+    currentResult /= UserNum;
+    operatorMath = "/";
+  }
+  displayValue(intialValue, operatorMath, UserNum);
+  showLog(operatorMath, intialValue, UserNum, currentResult);
+}
+function add() {
+  calculation("ADD");
 }
 function subtract() {
-  const UserNum = getUserNumberInput();
-  const intialValue = currentResult;
-  currentResult -= UserNum;
-  displayValue(intialValue, "-", UserNum);
-  showLog("-", intialValue, UserNum, currentResult);
+  calculation("SUBTRACT");
 }
 function multiply() {
-  const UserNum = getUserNumberInput();
-  const intialValue = currentResult;
-  currentResult *= UserNum;
-  displayValue(intialValue, "*", UserNum);
-  showLog("*", intialValue, UserNum, currentResult);
+  calculation("MULTIPLY");
 }
 function devision() {
-  const UserNum = getUserNumberInput();
-  const intialValue = currentResult;
-  currentResult /= UserNum;
-  displayValue(intialValue, "/", UserNum);
-  showLog("/", intialValue, UserNum, currentResult);
+  calculation("DIVIDE");
 }
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", subtract);
