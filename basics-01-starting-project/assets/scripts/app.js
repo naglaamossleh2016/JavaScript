@@ -23,8 +23,16 @@ function showLog(operation, intialValue, UserNum, summtion) {
 }
 function calculation(operator) {
   const UserNum = getUserNumberInput();
-  const intialValue = currentResult;
+  if (
+    (operator !== "ADD" &&
+      operator !== "SUBTRACT" &&
+      operator !== "MULTIPLY" &&
+      operator !== "DIVIDE") ||
+    !UserNum
+  )
+    return;
 
+  const intialValue = currentResult;
   if (operator === "ADD") {
     currentResult += UserNum;
     operatorMath = "+";
