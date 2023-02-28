@@ -16,14 +16,37 @@
 // };
 // console.log(user.getUserData());
 
-let mainObj = {
-  hasDiscount: true,
-  showMessage: function () {
-    return `User ${this.hasDiscount ? "" : "Don't"} have discount`;
+// let mainObj = {
+//   hasDiscount: true,
+//   showMessage: function () {
+//     return `User ${this.hasDiscount ? "" : "Don't"} have discount`;
+//   },
+// };
+// console.log(mainObj.showMessage());
+
+// let secondObj = Object.create(mainObj);
+// secondObj.hasDiscount = false;
+// console.log(secondObj.showMessage());
+
+let obj1 = {
+  prob1: "Value1",
+  prob2: "Value2",
+  method1: function () {
+    return "Method1 from obj1";
   },
 };
-console.log(mainObj.showMessage());
+let obj2 = {
+  prob3: "Value3",
+  prob4: "Value4",
+  method2: function () {
+    return "Method1 from obj2";
+  },
+};
+let target = {
+  prob5: "Value5",
+};
 
-let secondObj = Object.create(mainObj);
-secondObj.hasDiscount = false;
-console.log(secondObj.showMessage());
+Object.assign(target, obj1, obj2, { prob6: "Value6" });
+console.log(target);
+let obj3 = Object.assign({}, target);
+console.log(obj3);
