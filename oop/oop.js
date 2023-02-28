@@ -1,27 +1,29 @@
-let user = {
-  firstName: "Naglaa",
-  lastName: "Mossleh",
-  age: 37,
-  address: {
-    eg: "Egypt",
-    usa: "california",
-    ksa: "Riyadh",
-    getAddress: () => `Main Address ${user.address.eg}`,
+// let obj = {
+//   1: "one",
+//   2: "two",
+//   name: "naglaa",
+// };
+// let userName = "name";
+// console.log(obj[userName]);
+// console.log(obj[1]);
+// //////////////////////////////////
+// let user = new Object();
+// user.firstName = "Tamem";
+// user.lastName = "Mohamed";
+// user.age = 3;
+// user.getUserData = function () {
+//   return `Full Name ${user.firstName} ${user.lastName}`;
+// };
+// console.log(user.getUserData());
+
+let mainObj = {
+  hasDiscount: true,
+  showMessage: function () {
+    return `User ${this.hasDiscount ? "" : "Don't"} have discount`;
   },
-  greet: function () {
-    return `${user.firstName} ${user.lastName}`;
-  },
-  ageInDays: () => `get user age ${user.age}`,
 };
+console.log(mainObj.showMessage());
 
-let newObj={
-  1:"One",
-  2:"Two"
-}
-
-console.log(user.firstName);
-console.log(user.lastName);
-console.log(user.greet());
-console.log(user.address.getAddress());
-console.log(user["address"]["ksa"]);
-console.log(user.age);
+let secondObj = Object.create(mainObj);
+secondObj.hasDiscount = false;
+console.log(secondObj.showMessage());
