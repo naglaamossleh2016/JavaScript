@@ -113,19 +113,43 @@
 
 // console.log(phone3.constructor === Phone); //error
 ///////////////////////////////////
-function User(fName, lName, age) {
-  this.fName = fName;
-  this.lName = lName;
+// function User(fName, lName, age) {
+//   this.fName = fName;
+//   this.lName = lName;
+//   this.age = age;
+//   this.fullName = function () {
+//     return `Hello User ${this.fName} ${this.lName}`;
+//   };
+//   this.ageInDays = function () {
+//     return `Age in days ${this.age * 365}`;
+//   };
+// }
+
+// let user1 = new User("Naglaa", "Mossleh", "37");
+// let user2 = new User("Ali", "Mohammed", "30");
+// console.log(user1.ageInDays());
+// console.log(user2.fullName());
+///////////////////////////////////////
+function UserData(name, email, age, showEmail) {
+  this.name = name;
+  this.email = email;
   this.age = age;
-  this.fullName = function () {
-    return `Hello User ${this.fName} ${this.lName}`;
+  this.showEmail = function () {
+    if (showEmail === true) {
+      return `Your email ${this.email}`;
+    } else {
+      return "Data is private";
+    }
   };
-  this.ageInDays = function () {
-    return `Age in days ${this.age * 365}`;
+  this.updateName = function (newName) {
+    if (this.age > 18) {
+      this.name = newName;
+    } else {
+      console.log("You are under age");
+    }
   };
 }
-
-let user1 = new User("Naglaa", "Mossleh", "37");
-let user2 = new User("Ali", "Mohammed", "30");
-console.log(user1.ageInDays());
-console.log(user2.fullName());
+let user1 = new UserData("naglaa", "Naglaa.mossleh@gmail.com", 10, false);
+console.log(user1.showEmail());
+user1.updateName("Nagwa");
+console.log(user1.name);
