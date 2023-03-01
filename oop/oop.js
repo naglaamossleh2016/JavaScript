@@ -98,17 +98,34 @@
 // console.log(phone1);
 // console.log(phone2);
 ///////////////////////new constructor///////////
-function Phone(serial) {
-  console.log(this);
-  this.serial = serial;
+// function Phone(serial) {
+//   console.log(this);
+//   this.serial = serial;
+// }
+// let phone1 = new Phone(123);
+// let phone2 = new Phone();
+// let phone3 = Phone();
+// console.log(phone1 instanceof Phone);
+// console.log(phone2 instanceof Phone);
+// console.log(phone3 instanceof Phone);
+
+// console.log(phone1.constructor === Phone);
+
+// console.log(phone3.constructor === Phone); //error
+///////////////////////////////////
+function User(fName, lName, age) {
+  this.fName = fName;
+  this.lName = lName;
+  this.age = age;
+  this.fullName = function () {
+    return `Hello User ${this.fName} ${this.lName}`;
+  };
+  this.ageInDays = function () {
+    return `Age in days ${this.age * 365}`;
+  };
 }
-let phone1 = new Phone(123);
-let phone2 = new Phone();
-let phone3 = Phone();
-console.log(phone1 instanceof Phone);
-console.log(phone2 instanceof Phone);
-console.log(phone3 instanceof Phone);
 
-console.log(phone1.constructor === Phone);
-
-console.log(phone3.constructor === Phone); //error
+let user1 = new User("Naglaa", "Mossleh", "37");
+let user2 = new User("Ali", "Mohammed", "30");
+console.log(user1.ageInDays());
+console.log(user2.fullName());
