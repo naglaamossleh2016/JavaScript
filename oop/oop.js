@@ -51,24 +51,49 @@
 // let obj3 = Object.assign({}, target);
 // console.log(obj3);
 //////////////////////////////
-let user = {
-  userName: "Naglaa",
-};
-console.log(user);
-console.log(user.userName);
+// let user = {
+//   userName: "Naglaa",
+// };
+// console.log(user);
+// console.log(user.userName);
 
-console.log(delete user);
-console.log(delete user.userName);
+// console.log(delete user);
+// console.log(delete user.userName);
 
-console.log(user);
-console.log(user.userName);
-//////////////////can not delete freeze object///////////
-let freezedObj = Object.freeze({ age: 37 });
-console.log(freezedObj);
-console.log(delete freezedObj);
+// console.log(user);
+// console.log(user.userName);
+// //////////////////can not delete freeze object///////////
+// let freezedObj = Object.freeze({ age: 37 });
+// console.log(freezedObj);
+// console.log(delete freezedObj);
+// /////////////////////////////
+// let emptyObj = {};
+// Object.defineProperty(emptyObj, "prob", { value: 1, configurable: true });
+// console.log(emptyObj);
+// console.log(delete emptyObj.prob);
+// console.log(emptyObj);
+
 /////////////////////////////
-let emptyObj = {};
-Object.defineProperty(emptyObj, "prob", { value: 1, configurable: true });
-console.log(emptyObj);
-console.log(delete emptyObj.prob);
-console.log(emptyObj);
+// let userInfo = {
+//   firstName: "Naglaa",
+//   lastName: "Mossleh",
+//   age: 37,
+// };
+// let infoData = "";
+// for (let info in userInfo) {
+//   infoData += `The User Data ${info} => ${userInfo[info]} `;
+// }
+// console.log(infoData);
+// //console.log(document.getElementById("info"));
+// document.getElementById("info").innerHTML = infoData;
+
+//////////////////////////////////
+function phone(serial, color, price) {
+  this.serial = serial;
+  this.color = color;
+  this.price = price;
+}
+let phone1 = new phone(123, "Red", 500);
+let phone2 = new phone(456, "Black", 500);
+console.log(phone1);
+console.log(phone2);
