@@ -154,8 +154,21 @@
 // user1.updateName("Nagwa");
 // console.log(user1.name);
 /////////////////built in function//////////////
-Object.prototype.getData = function () {
-  return "UserData";
+// Object.prototype.getData = function () {
+//   return "UserData";
+// };
+// let obj1 = { a: 1, b: 2 };
+// console.log(obj1);
+
+String.prototype.zFill = function (width) {
+  let result = this;
+  while (result.length < width) {
+    result = `0${result}`;
+  }
+  return result;
 };
-let obj1 = { a: 1, b: 2 };
-console.log(obj1);
+String.prototype.sayILoveYou = function () {
+  return `I Love You ${this}`;
+};
+console.log("123".zFill(5));
+console.log("naglaa".sayILoveYou());
