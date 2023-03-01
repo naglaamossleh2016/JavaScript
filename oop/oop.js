@@ -130,26 +130,32 @@
 // console.log(user1.ageInDays());
 // console.log(user2.fullName());
 ///////////////////////////////////////
-function UserData(name, email, age, showEmail) {
-  this.name = name;
-  this.email = email;
-  this.age = age;
-  this.showEmail = function () {
-    if (showEmail === true) {
-      return `Your email ${this.email}`;
-    } else {
-      return "Data is private";
-    }
-  };
-  this.updateName = function (newName) {
-    if (this.age > 18) {
-      this.name = newName;
-    } else {
-      console.log("You are under age");
-    }
-  };
-}
-let user1 = new UserData("naglaa", "Naglaa.mossleh@gmail.com", 10, false);
-console.log(user1.showEmail());
-user1.updateName("Nagwa");
-console.log(user1.name);
+// function UserData(name, email, age, showEmail) {
+//   this.name = name;
+//   this.email = email;
+//   this.age = age;
+//   this.showEmail = function () {
+//     if (showEmail === true) {
+//       return `Your email ${this.email}`;
+//     } else {
+//       return "Data is private";
+//     }
+//   };
+//   this.updateName = function (newName) {
+//     if (this.age > 18) {
+//       this.name = newName;
+//     } else {
+//       console.log("You are under age");
+//     }
+//   };
+// }
+// let user1 = new UserData("naglaa", "Naglaa.mossleh@gmail.com", 10, false);
+// console.log(user1.showEmail());
+// user1.updateName("Nagwa");
+// console.log(user1.name);
+/////////////////built in function//////////////
+Object.prototype.getData = function () {
+  return "UserData";
+};
+let obj1 = { a: 1, b: 2 };
+console.log(obj1);
