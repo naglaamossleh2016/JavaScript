@@ -88,12 +88,27 @@
 // document.getElementById("info").innerHTML = infoData;
 
 //////////////////////////////////
-function phone(serial, color, price) {
+// function phone(serial, color, price) {
+//   this.serial = serial;
+//   this.color = color;
+//   this.price = price;
+// }
+// let phone1 = new phone(123, "Red", 500);
+// let phone2 = new phone(456, "Black", 500);
+// console.log(phone1);
+// console.log(phone2);
+///////////////////////new constructor///////////
+function Phone(serial) {
+  console.log(this);
   this.serial = serial;
-  this.color = color;
-  this.price = price;
 }
-let phone1 = new phone(123, "Red", 500);
-let phone2 = new phone(456, "Black", 500);
-console.log(phone1);
-console.log(phone2);
+let phone1 = new Phone(123);
+let phone2 = new Phone();
+let phone3 = Phone();
+console.log(phone1 instanceof Phone);
+console.log(phone2 instanceof Phone);
+console.log(phone3 instanceof Phone);
+
+console.log(phone1.constructor === Phone);
+
+console.log(phone3.constructor === Phone); //error
