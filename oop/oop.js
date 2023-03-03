@@ -117,6 +117,20 @@ static objectNum=function getcounter() {
 }
 
 }
-let User1=new User("Naglaa","O@gmail.com");
-console.log(User1);
-console.log(User.objectNum());
+
+class admin extends User{
+  constructor(name,email){
+    super(name,email);
+  }
+  isAdmin(){
+    return `Are You Admin?`;
+  }
+  showEmail(){
+    return `Admin Email ${this.email}`;
+  }
+}
+let admin1=new admin("naglaa","O@gmail.com");
+console.log(admin1);
+// console.log(admin1.objectNum());
+console.log(admin1.isAdmin());
+console.log(admin1.showEmail());
