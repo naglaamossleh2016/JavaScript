@@ -51,24 +51,43 @@
 // let obj3 = Object.assign({}, target);
 // console.log(obj3);
 //////////////////////////////
-let user = {
-  userName: "Naglaa",
-};
-console.log(user);
-console.log(user.userName);
+// let user = {
+//   userName: "Naglaa",
+// };
+// console.log(user);
+// console.log(user.userName);
 
-console.log(delete user);
-console.log(delete user.userName);
+// console.log(delete user);
+// console.log(delete user.userName);
 
-console.log(user);
-console.log(user.userName);
-//////////////////can not delete freeze object///////////
-let freezedObj = Object.freeze({ age: 37 });
-console.log(freezedObj);
-console.log(delete freezedObj);
-/////////////////////////////
-let emptyObj = {};
-Object.defineProperty(emptyObj, "prob", { value: 1, configurable: true });
-console.log(emptyObj);
-console.log(delete emptyObj.prob);
-console.log(emptyObj);
+// console.log(user);
+// console.log(user.userName);
+// //////////////////can not delete freeze object///////////
+// let freezedObj = Object.freeze({ age: 37 });
+// console.log(freezedObj);
+// console.log(delete freezedObj);
+// /////////////////////////////
+// let emptyObj = {};
+// Object.defineProperty(emptyObj, "prob", { value: 1, configurable: true });
+// console.log(emptyObj);
+// console.log(delete emptyObj.prob);
+// console.log(emptyObj);
+//////for in//////////////
+let info={
+  firstName:"Naglaa",
+  lastName:"Mossleh",
+  age:37
+}
+let data='';
+for (let val in info){
+  data= `user data ${val} => ${info[val]}`;
+}
+console.log(data);
+/////////////////////
+function ConstructorData(serial,color,price){
+  this.serial=serial;
+  this.color=color;
+  this.price=price;
+}
+let data1=new ConstructorData(123,"Red",500);
+console.log(data1);
