@@ -84,17 +84,39 @@
 // // console.log(user1.prototype)
 // console.log(user1);
 //////////// class
+// class User{
+//   constructor(name,email){
+//     this.name=name;
+//     this.email=email;
+//   }
+//   sayHello() {
+//     return `Hello ${this.name}`;
+//   }
+//   showEmail(){
+//     return `My Email ${this.email}`;
+//   }
+// }
+// let user1=new User("Naglaa","n@gmail.com");
+// console.log(user1);
+///////////////static class
 class User{
-  constructor(name,email){
-    this.name=name;
-    this.email=email;
-  }
-  sayHello() {
-    return `Hello ${this.name}`;
-  }
-  showEmail(){
-    return `My Email ${this.email}`;
-  }
+static counter=0;
+constructor (name,email){
+  this.name=name;
+  this.email=email;
+  User.counter++;
 }
-let user1=new User("Naglaa","n@gmail.com");
-console.log(user1);
+sayHello(){
+  return `Hello User ${this.name}`;
+}
+showEmail(){
+  return `User Email ${this.email}`;
+}
+static objectNum=function getcounter() {
+  return `${User.counter} object created`;
+}
+
+}
+let User1=new User("Naglaa","O@gmail.com");
+console.log(User1);
+console.log(User.objectNum());
