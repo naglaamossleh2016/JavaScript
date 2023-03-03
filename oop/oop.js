@@ -73,13 +73,28 @@
 // console.log(delete emptyObj.prob);
 // console.log(emptyObj);
 ///////prototype
-function User(name){
-  this.name=name;
-  if(!(this instanceof User))
-  throw new Error("You Must Use New Keyword");
+// function User(name){
+//   this.name=name;
+//   if(!(this instanceof User))
+//   throw new Error("You Must Use New Keyword");
+// }
+// let user1=new User("Naglaa");
+// let user2=User("HI")
+// console.log(User.prototype);
+// // console.log(user1.prototype)
+// console.log(user1);
+//////////// class
+class User{
+  constructor(name,email){
+    this.name=name;
+    this.email=email;
+  }
+  sayHello() {
+    return `Hello ${this.name}`;
+  }
+  showEmail(){
+    return `My Email ${this.email}`;
+  }
 }
-let user1=new User("Naglaa");
-let user2=User("HI")
-console.log(User.prototype);
-// console.log(user1.prototype)
+let user1=new User("Naglaa","n@gmail.com");
 console.log(user1);
