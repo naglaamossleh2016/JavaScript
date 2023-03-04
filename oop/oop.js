@@ -159,16 +159,9 @@
 // };
 // let obj1 = { a: 1, b: 2 };
 // console.log(obj1);
-
-String.prototype.zFill = function (width) {
-  let result = this;
-  while (result.length < width) {
-    result = `0${result}`;
-  }
-  return result;
-};
-String.prototype.sayILoveYou = function () {
-  return `I Love You ${this}`;
-};
-console.log("123".zFill(5));
-console.log("naglaa".sayILoveYou());
+function User(name) {
+  this.name = name;
+  if (!this instanceof User) throw new error("Error");
+}
+let user1 = new User("Naglaa");
+let user2 = User("N");
