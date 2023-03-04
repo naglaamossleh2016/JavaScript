@@ -22,8 +22,9 @@
 ////////////////////
 var test = document.getElementById("test");
 // test.innerHTML = document.title;
-for (let i = 0; i < document.images.length; i++) {
-  test.innerHTML += "  " + document.images[i].src;
-}
+// for (let i = 0; i < document.images.length; i++) {
+//   test.innerHTML += "  " + document.images[i].src;
+// }
 var showform = document.getElementById("showForm");
-showform.innerHTML = document.forms[0].input2.type;
+// showform.innerHTML = document.forms[0].input2.type;
+showform.innerText = document.body.innerText;
