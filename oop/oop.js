@@ -72,44 +72,50 @@
 // console.log(emptyObj);
 // console.log(delete emptyObj.prob);
 // console.log(emptyObj);
-
-/////////////////////////////
-// let userInfo = {
-//   firstName: "Naglaa",
-//   lastName: "Mossleh",
-//   age: 37,
-// };
-// let infoData = "";
-// for (let info in userInfo) {
-//   infoData += `The User Data ${info} => ${userInfo[info]} `;
+///////prototype
+// function User(name){
+//   this.name=name;
+//   if(!(this instanceof User))
+//   throw new Error("You Must Use New Keyword");
 // }
-// console.log(infoData);
-// //console.log(document.getElementById("info"));
-// document.getElementById("info").innerHTML = infoData;
-
-//////////////////////////////////
-// function phone(serial, color, price) {
-//   this.serial = serial;
-//   this.color = color;
-//   this.price = price;
+// let user1=new User("Naglaa");
+// let user2=User("HI")
+// console.log(User.prototype);
+// // console.log(user1.prototype)
+// console.log(user1);
+//////////// class
+// class User{
+//   constructor(name,email){
+//     this.name=name;
+//     this.email=email;
+//   }
+//   sayHello() {
+//     return `Hello ${this.name}`;
+//   }
+//   showEmail(){
+//     return `My Email ${this.email}`;
+//   }
 // }
-// let phone1 = new phone(123, "Red", 500);
-// let phone2 = new phone(456, "Black", 500);
-// console.log(phone1);
-// console.log(phone2);
-///////////////////////new constructor///////////
-// function Phone(serial) {
-//   console.log(this);
-//   this.serial = serial;
-// }
-// let phone1 = new Phone(123);
-// let phone2 = new Phone();
-// let phone3 = Phone();
-// console.log(phone1 instanceof Phone);
-// console.log(phone2 instanceof Phone);
-// console.log(phone3 instanceof Phone);
-
-// console.log(phone1.constructor === Phone);
+// let user1=new User("Naglaa","n@gmail.com");
+// console.log(user1);
+///////////////static class
+class User {
+  static counter = 0;
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+    User.counter++;
+  }
+  sayHello() {
+    return `Hello User ${this.name}`;
+  }
+  showEmail() {
+    return `User Email ${this.email}`;
+  }
+  static objectNum = function getcounter() {
+    return `${User.counter} object created`;
+  };
+}
 
 // console.log(phone3.constructor === Phone); //error
 ///////////////////////////////////
@@ -159,9 +165,16 @@
 // };
 // let obj1 = { a: 1, b: 2 };
 // console.log(obj1);
-function User(name) {
-  this.name = name;
-  if (!this instanceof User) throw new error("Error");
-}
-let user1 = new User("Naglaa");
-let user2 = User("N");
+
+String.prototype.zFill = function (width) {
+  let result = this;
+  while (result.length < width) {
+    result = `0${result}`;
+  }
+  return result;
+};
+String.prototype.sayILoveYou = function () {
+  return `I Love You ${this}`;
+};
+console.log("123".zFill(5));
+console.log("naglaa".sayILoveYou());
