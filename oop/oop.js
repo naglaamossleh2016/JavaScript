@@ -179,23 +179,40 @@
 // console.log("123".zFill(5));
 // console.log("naglaa".sayILoveYou());
 //////get and set////////////////
-class User {
-  constructor(name, email, age) {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-  }
-  get showName() {
-    return `Hello user ${this.name}`;
-  }
-  showEmail() {
-    return `User Email ${this.email}`;
-  }
-  set userAge(newAge) {
-    this.age = newAge;
-  }
+// class User {
+//   constructor(name, email, age) {
+//     this.name = name;
+//     this.email = email;
+//     this.age = age;
+//   }
+//   get showName() {
+//     return `Hello user ${this.name}`;
+//   }
+//   showEmail() {
+//     return `User Email ${this.email}`;
+//   }
+//   set userAge(newAge) {
+//     this.age = newAge;
+//   }
+// }
+// let user1 = new User("Naglaa", "a@gmail.com", 37);
+// console.log(user1.showName);
+// user1.userAge = 35;
+// console.log(user1.age);
+///////////////////////object meta data
+let obj1 = {
+  a: 1,
+  b: 2,
+};
+Object.defineProperty(obj1, "c", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+  value: 50,
+});
+console.log(obj1);
+console.log(obj1.c);
+console.log(delete obj1.c);
+for (let prob in obj1) {
+  console.log(`Prob ${prob} is ${obj1[prob]}`);
 }
-let user1 = new User("Naglaa", "a@gmail.com", 37);
-console.log(user1.showName);
-user1.userAge = 35;
-console.log(user1.age);
