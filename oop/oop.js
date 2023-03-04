@@ -200,19 +200,37 @@
 // user1.userAge = 35;
 // console.log(user1.age);
 ///////////////////////object meta data
-let obj1 = {
+// let obj1 = {
+//   a: 1,
+//   b: 2,
+// };
+// Object.defineProperty(obj1, "c", {
+//   writable: true,
+//   enumerable: true,
+//   configurable: true,
+//   value: 50,
+// });
+// console.log(obj1);
+// console.log(obj1.c);
+// console.log(delete obj1.c);
+// for (let prob in obj1) {
+//   console.log(`Prob ${prob} is ${obj1[prob]}`);
+// }
+//////////////////define property
+let myObject = {
   a: 1,
   b: 2,
 };
-Object.defineProperty(obj1, "c", {
+Object.defineProperty(myObject, "c", {
   writable: true,
   enumerable: true,
   configurable: true,
-  value: 50,
+  value: 3,
 });
-console.log(obj1);
-console.log(obj1.c);
-console.log(delete obj1.c);
-for (let prob in obj1) {
-  console.log(`Prob ${prob} is ${obj1[prob]}`);
-}
+Object.defineProperties(myObject, {
+  d: {
+    value: 3,
+  },
+  E: { writable: true, enumerable: true, configurable: true, value: 5 },
+});
+console.log(Object.getOwnPropertyDescriptors(myObject));
