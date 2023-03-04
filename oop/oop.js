@@ -99,23 +99,23 @@
 // let user1=new User("Naglaa","n@gmail.com");
 // console.log(user1);
 ///////////////static class
-class User {
-  static counter = 0;
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
-    User.counter++;
-  }
-  sayHello() {
-    return `Hello User ${this.name}`;
-  }
-  showEmail() {
-    return `User Email ${this.email}`;
-  }
-  static objectNum = function getcounter() {
-    return `${User.counter} object created`;
-  };
-}
+// class User {
+//   static counter = 0;
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//     User.counter++;
+//   }
+//   sayHello() {
+//     return `Hello User ${this.name}`;
+//   }
+//   showEmail() {
+//     return `User Email ${this.email}`;
+//   }
+//   static objectNum = function getcounter() {
+//     return `${User.counter} object created`;
+//   };
+// }
 
 // console.log(phone3.constructor === Phone); //error
 ///////////////////////////////////
@@ -166,15 +166,36 @@ class User {
 // let obj1 = { a: 1, b: 2 };
 // console.log(obj1);
 
-String.prototype.zFill = function (width) {
-  let result = this;
-  while (result.length < width) {
-    result = `0${result}`;
+// String.prototype.zFill = function (width) {
+//   let result = this;
+//   while (result.length < width) {
+//     result = `0${result}`;
+//   }
+//   return result;
+// };
+// String.prototype.sayILoveYou = function () {
+//   return `I Love You ${this}`;
+// };
+// console.log("123".zFill(5));
+// console.log("naglaa".sayILoveYou());
+//////get and set////////////////
+class User {
+  constructor(name, email, age) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
   }
-  return result;
-};
-String.prototype.sayILoveYou = function () {
-  return `I Love You ${this}`;
-};
-console.log("123".zFill(5));
-console.log("naglaa".sayILoveYou());
+  get showName() {
+    return `Hello user ${this.name}`;
+  }
+  showEmail() {
+    return `User Email ${this.email}`;
+  }
+  set userAge(newAge) {
+    this.age = newAge;
+  }
+}
+let user1 = new User("Naglaa", "a@gmail.com", 37);
+console.log(user1.showName);
+user1.userAge = 35;
+console.log(user1.age);
