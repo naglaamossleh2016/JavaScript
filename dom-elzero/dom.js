@@ -20,11 +20,20 @@
 // console.log(selectors.length);
 
 ////////////////////
-var test = document.getElementById("test");
-// test.innerHTML = document.title;
-// for (let i = 0; i < document.images.length; i++) {
-//   test.innerHTML += "  " + document.images[i].src;
-// }
-var showform = document.getElementById("showForm");
-// showform.innerHTML = document.forms[0].input2.type;
-showform.innerText = document.body.innerText;
+// var test = document.getElementById("test");
+// // test.innerHTML = document.title;
+// // for (let i = 0; i < document.images.length; i++) {
+// //   test.innerHTML += "  " + document.images[i].src;
+// // }
+// var showform = document.getElementById("showForm");
+// // showform.innerHTML = document.forms[0].input2.type;
+// showform.innerText = document.body.innerText;
+//////////////////Get and set dom content
+
+var myImg = document.querySelector("img");
+if (myImg.hasAttribute("alt")) {
+  console.log("Has attribute");
+  if ((myImg.alt = " ")) {
+    myImg.removeAttribute("alt");
+  }
+}
