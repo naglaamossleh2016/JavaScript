@@ -30,10 +30,19 @@
 // showform.innerText = document.body.innerText;
 //////////////////Get and set dom content
 
-var myImg = document.querySelector("img");
-if (myImg.hasAttribute("alt")) {
-  console.log("Has attribute");
-  if ((myImg.alt = " ")) {
-    myImg.removeAttribute("alt");
-  }
+// var myImg = document.querySelector("img");
+// if (myImg.hasAttribute("alt")) {
+//   console.log("Has attribute");
+//   if ((myImg.alt = " ")) {
+//     myImg.removeAttribute("alt");
+//   }
+// }
+//////////////////////////
+var myDiv = document.querySelector("div");
+console.log(myDiv.classList.length);
+if (myDiv.classList.contains("hasClass")) {
+  console.log("It have this class");
+} else {
+  console.log("It does not have this class");
 }
+console.log(myDiv.classList);
