@@ -47,9 +47,14 @@
 // }
 // console.log(myDiv.classList);
 /////////////assignment
+// var myP = document.querySelector("p");
+// var myBtn = document.querySelector("button");
+// var showDiv = document.querySelector(".showInfo");
+// if (myP.classList.contains(myBtn.textContent)) {
+//   showDiv.textContent = myBtn.textContent;
+// }
 var myP = document.querySelector("p");
 var myBtn = document.querySelector("button");
-var showDiv = document.querySelector(".showInfo");
-if (myP.classList.contains(myBtn.textContent)) {
-  showDiv.textContent = myBtn.textContent;
-}
+myBtn.onclick = function () {
+  myP.classList.toggle("hidden");
+};
