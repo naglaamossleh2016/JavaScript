@@ -38,11 +38,18 @@
 //   }
 // }
 //////////////////////////
-var myDiv = document.querySelector("div");
-console.log(myDiv.classList.length);
-if (myDiv.classList.contains("hasClass")) {
-  console.log("It have this class");
-} else {
-  console.log("It does not have this class");
+// var myDiv = document.querySelector("div");
+// console.log(myDiv.classList.length);
+// if (myDiv.classList.contains("hasClass")) {
+//   console.log("It have this class");
+// } else {
+//   console.log("It does not have this class");
+// }
+// console.log(myDiv.classList);
+/////////////assignment
+var myP = document.querySelector("p");
+var myBtn = document.querySelector("button");
+var showDiv = document.querySelector(".showInfo");
+if (myP.classList.contains(myBtn.textContent)) {
+  showDiv.textContent = myBtn.textContent;
 }
-console.log(myDiv.classList);
